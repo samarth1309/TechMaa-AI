@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers | TechMaa-AI</title>
+
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <header class="bg-black text-white shadow-lg sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a
+          href="index.html"
+          class="flex items-center space-x-2 text-2xl font-bold"
+          aria-label="TechMaa-AI Home"
+        >
+          <img
+            src="assets/img/logo.svg"
+            alt="TechMaa-AI Logo"
+            class="w-8 h-8"
+          />
+          <span class="hidden sm:inline">TechMaa-AI</span>
+        </a>
+        <ul class="hidden md:flex items-center space-x-6">
+          <li>
+            <a href="services.html" class="hover:text-yellow-400 transition"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a href="testimonials.html" class="hover:text-yellow-400 transition"
+              >Testimonials</a
+            >
+          </li>
+          <li>
+            <a href="insights.html" class="hover:text-yellow-400 transition"
+              >Insights</a
+            >
+          </li>
+          <li>
+            <a href="careers.html" class="text-yellow-400 font-semibold"
+              >Careers</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 px-4 rounded-lg transition"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <button
+          id="mobile-menu-button"
+          class="md:hidden focus:outline-none"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </nav>
+
+      <div
+        id="mobile-menu-overlay"
+        class="md:hidden fixed inset-0 bg-black bg-opacity-75 z-40 hidden"
+      ></div>
+      <div
+        id="mobile-menu"
+        class="md:hidden fixed top-0 right-0 w-64 h-full bg-gray-900 text-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50"
+      >
+        <div class="p-6 flex justify-end">
+          <button
+            id="close-mobile-menu"
+            class="text-white focus:outline-none"
+            aria-label="Close mobile menu"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <ul class="flex flex-col space-y-4 p-6">
+          <li>
+            <a
+              href="services.html"
+              class="block py-2 text-lg hover:text-yellow-400 transition"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              href="testimonials.html"
+              class="block py-2 text-lg hover:text-yellow-400 transition"
+              >Testimonials</a
+            >
+          </li>
+          <li>
+            <a
+              href="insights.html"
+              class="block py-2 text-lg hover:text-yellow-400 transition"
+              >Insights</a
+            >
+          </li>
+          <li>
+            <a
+              href="careers.html"
+              class="block py-2 text-lg text-yellow-400 font-semibold"
+              >Careers</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="block py-2 text-lg hover:text-yellow-400 transition"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="bg-white">
+        <div
+          class="container mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center"
+        >
+          <div class="text-center md:text-left">
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6"
+            >
+              Shape the Future with
+              <span class="text-yellow-500">TechMaa-AI</span>
+            </h1>
+            <p class="text-lg text-gray-700 mb-8 max-w-xl mx-auto md:mx-0">
+              Join a global team of innovators, engineers, and creators who are
+              using AI, data, and cloud to transform industries.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+            >
+              <a
+                href="#jobs"
+                class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+                >View Open Roles</a
+              >
+              <a
+                href="#life"
+                class="bg-gray-800 hover:bg-black text-white font-bold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+                >Life at TechMaa-AI</a
+              >
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <img
+              src="assets/img/lifeAtTechmaa.png"
+              alt="Team collaborating at TechMaa-AI"
+              class="rounded-lg shadow-2xl w-full max-w-md"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="life" class="py-16 md:py-24">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <img
+                    src="assets/img/miniGames.png"
+                    alt="A collaborative and fun work environment"
+                    class="rounded-lg shadow-2xl w-full max-w-md mx-auto"
+                />
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                    Life at TechMaa-AI
+                </h2>
+                <p class="text-lg text-gray-700 mb-8">
+                    We believe in an outcome-first culture, driven by collaboration,
+                    curiosity, and continuous learning.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-yellow-500 mt-1 mr-3"></i>
+                        <span class="text-gray-700">Work on cutting-edge AI, data, and cloud transformation projects</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-yellow-500 mt-1 mr-3"></i>
+                        <span class="text-gray-700">Flexible working options: hybrid, remote, and global mobility</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-yellow-500 mt-1 mr-3"></i>
+                        <span class="text-gray-700">Continuous learning programs and certifications</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-yellow-500 mt-1 mr-3"></i>
+                        <span class="text-gray-700">A diverse, inclusive, and collaborative environment</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </section>
+
+
+      <section id="jobs" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Open Roles
+          </h2>
+          <p class="text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
+            Explore opportunities to grow your career with us. Click on a role
+            to learn more about responsibilities, qualifications, and benefits.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left" role="list">
+            <div role="listitem" class="bg-gray-50 p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Senior AI Engineer</h3>
+                <p class="text-gray-600 mb-4">Bengaluru, India | Full-time</p>
+                <p class="text-gray-700 mb-6 flex-grow">Design and implement machine learning models for enterprise-level applications. Expertise in Python, TensorFlow, and cloud platforms required.</p>
+                <a href="apply-form.html" class="mt-auto text-center bg-gray-800 hover:bg-black text-white font-bold py-3 px-6 rounded-lg transition-all duration-300">Learn More & Apply</a>
+            </div>
+            
+            <div role="listitem" class="bg-gray-50 p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Cloud Solutions Architect</h3>
+                <p class="text-gray-600 mb-4">Remote | Full-time</p>
+                <p class="text-gray-700 mb-6 flex-grow">Lead the design of robust, scalable, and secure cloud infrastructure for our clients on AWS, Azure, and GCP.</p>
+                <a href="apply-form.html" class="mt-auto text-center bg-gray-800 hover:bg-black text-white font-bold py-3 px-6 rounded-lg transition-all duration-300">Learn More & Apply</a>
+            </div>
+
+            <div role="listitem" class="bg-gray-50 p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Data Scientist</h3>
+                <p class="text-gray-600 mb-4">Pune, India | Hybrid</p>
+                <p class="text-gray-700 mb-6 flex-grow">Analyze large, complex data sets to identify trends, develop predictive models, and provide actionable insights that drive business decisions.</p>
+                <a href="apply-form.html" class="mt-auto text-center bg-gray-800 hover:bg-black text-white font-bold py-3 px-6 rounded-lg transition-all duration-300">Learn More & Apply</a>
+            </div>
+            
+            </div>
+        </div>
+      </section>
+
+      <section class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-16 text-center">
+          <h2 class="text-3xl font-bold mb-4">
+            Didn’t find the right role?
+          </h2>
+          <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+            We’re always looking for exceptional talent. Share your profile with
+            us, and we’ll reach out when an opportunity fits.
+          </p>
+          <a
+            href="contact.html#messageUs"
+            class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+            >Send Your CV</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-black text-white py-8">
+      <div class="container mx-auto px-6 text-center text-gray-400">
+        <p>&copy; <span id="year"></span> TechMaa-AI. All rights reserved.</p>
+        <p class="text-sm mt-2">
+          Empowering industries with AI-driven innovation.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Set current year in footer
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Mobile menu toggle logic
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const closeMobileMenuButton =
+          document.getElementById("close-mobile-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileMenuOverlay = document.getElementById(
+          "mobile-menu-overlay"
+        );
+
+        const toggleMobileMenu = () => {
+          const isOpen = mobileMenu.classList.contains("translate-x-full");
+          if (isOpen) {
+            mobileMenu.classList.remove("translate-x-full");
+            mobileMenuOverlay.classList.remove("hidden");
+            mobileMenuButton.setAttribute("aria-expanded", "true");
+            document.body.classList.add("overflow-hidden"); 
+          } else {
+            mobileMenu.classList.add("translate-x-full");
+            mobileMenuOverlay.classList.add("hidden");
+            mobileMenuButton.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("overflow-hidden");
+          }
+        };
+
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenuButton.addEventListener("click", toggleMobileMenu);
+        mobileMenuOverlay.addEventListener("click", toggleMobileMenu);
+
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            if (!mobileMenu.classList.contains("translate-x-full")) {
+              toggleMobileMenu();
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

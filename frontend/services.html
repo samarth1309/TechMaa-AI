@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | TechMaa-AI</title>
+
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <header class="bg-black text-white shadow-lg sticky top-0 z-50">
+      <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold" aria-label="TechMaa-AI Home">
+          <img src="assets/img/logo.svg" alt="TechMaa-AI Logo" class="w-8 h-8" />
+          <span class="hidden sm:inline">TechMaa-AI</span>
+        </a>
+        <ul class="hidden md:flex items-center space-x-6">
+          <li><a href="services.html" class="text-yellow-400 font-semibold">Services</a></li>
+          <li><a href="testimonials.html" class="hover:text-yellow-400 transition">Testimonials</a></li>
+          <li><a href="insights.html" class="hover:text-yellow-400 transition">Insights</a></li>
+          <li><a href="careers.html" class="hover:text-yellow-400 transition">Careers</a></li>
+          <li><a href="contact.html" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 px-4 rounded-lg transition">Contact</a></li>
+        </ul>
+        <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </nav>
+
+      <div id="mobile-menu-overlay" class="md:hidden fixed inset-0 bg-black bg-opacity-75 z-40 hidden"></div>
+      <div id="mobile-menu" class="md:hidden fixed top-0 right-0 w-64 h-full bg-gray-900 text-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <div class="p-6 flex justify-end">
+          <button id="close-mobile-menu" class="text-white focus:outline-none" aria-label="Close mobile menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <ul class="flex flex-col space-y-4 p-6">
+          <li><a href="services.html" class="block py-2 text-lg text-yellow-400 font-semibold">Services</a></li>
+          <li><a href="testimonials.html" class="block py-2 text-lg hover:text-yellow-400 transition">Testimonials</a></li>
+          <li><a href="insights.html" class="block py-2 text-lg hover:text-yellow-400 transition">Insights</a></li>
+          <li><a href="careers.html" class="block py-2 text-lg hover:text-yellow-400 transition">Careers</a></li>
+          <li><a href="contact.html" class="block py-2 text-lg hover:text-yellow-400 transition">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+        <section class="bg-gray-900 text-white">
+            <div class="container mx-auto px-6 py-20 text-center">
+                <h1 class="text-4xl sm:text-5xl font-extrabold">Our Services</h1>
+                <p class="text-lg text-gray-300 mt-4 max-w-3xl mx-auto">
+                    Driving transformation through AI innovation, strategic vision, and engineering excellence for businesses worldwide.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Our Core Capabilities</h2>
+                    <p class="text-lg text-gray-700 mt-4 max-w-2xl mx-auto">We provide end-to-end solutions to help you navigate every phase of your digital transformation journey.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="text-4xl text-yellow-500 mb-4"><i class="fas fa-compass"></i></div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Strategy & Advisory</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">We help you define your AI and data strategy to create a clear roadmap for innovation and growth that aligns with your business goals.</p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>AI Adoption Roadmap</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Target Operating Model Design</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Technology & Vendor Assessment</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Change Management & Enablement</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="text-4xl text-yellow-500 mb-4"><i class="fas fa-brain"></i></div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Data & GenAI</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">Unlock the power of your data with our expertise in building scalable data platforms, machine learning models, and generative AI solutions.</p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Modern Data Platforms & Governance</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Machine Learning & MLOps</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Generative AI Copilots & Automation</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Business Intelligence & Analytics</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="text-4xl text-yellow-500 mb-4"><i class="fas fa-cloud"></i></div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Engineering & Cloud</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">We build robust, scalable, and secure software and cloud infrastructure to power your digital products and services.</p>
+                        <ul class="space-y-3 text-gray-700">
+                             <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Cloud-Native Application Development</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Platform Modernization</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>Cloud Migration (AWS, Azure, GCP)</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span>DevOps & Site Reliability Engineering (SRE)</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Our Approach</h2>
+                    <p class="text-lg text-gray-700 mt-4 max-w-2xl mx-auto">We follow a proven, collaborative process to ensure we deliver solutions that drive real business value.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-16 w-16 bg-yellow-100 text-yellow-600 rounded-full mx-auto text-2xl font-bold mb-4">01</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Discover & Plan</h3>
+                        <p class="text-gray-600">We start by deeply understanding your goals and challenges, then co-create a strategic plan and roadmap for success.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-16 w-16 bg-yellow-100 text-yellow-600 rounded-full mx-auto text-2xl font-bold mb-4">02</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Design & Build</h3>
+                        <p class="text-gray-600">Our agile teams design and engineer your solution using modern technologies and best practices, with continuous feedback loops.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-16 w-16 bg-yellow-100 text-yellow-600 rounded-full mx-auto text-2xl font-bold mb-4">03</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Deploy & Scale</h3>
+                        <p class="text-gray-600">We ensure a seamless launch and provide ongoing support to monitor, optimize, and scale your solution as your business grows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="bg-gray-800 text-white">
+            <div class="container mx-auto px-6 py-16 text-center">
+                <h2 class="text-3xl font-bold mb-4">Have a project in mind?</h2>
+                <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Let's discuss how our services can help you achieve your business objectives.
+                </p>
+                <a href="contact.html" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    Schedule a Consultation
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; <span id="year"></span> TechMaa-AI. All rights reserved.</p>
+            <p class="text-sm mt-2">Empowering industries with AI-driven innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Set current year in footer
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Mobile menu toggle logic
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const closeMobileMenuButton =
+          document.getElementById("close-mobile-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileMenuOverlay = document.getElementById(
+          "mobile-menu-overlay"
+        );
+
+        const toggleMobileMenu = () => {
+          const isOpen = mobileMenu.classList.contains("translate-x-full");
+          if (isOpen) {
+            mobileMenu.classList.remove("translate-x-full");
+            mobileMenuOverlay.classList.remove("hidden");
+            document.body.classList.add("overflow-hidden"); 
+          } else {
+            mobileMenu.classList.add("translate-x-full");
+            mobileMenuOverlay.classList.add("hidden");
+            document.body.classList.remove("overflow-hidden");
+          }
+        };
+
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenuButton.addEventListener("click", toggleMobileMenu);
+        mobileMenuOverlay.addEventListener("click", toggleMobileMenu);
+      });
+    </script>
+</body>
+</html>

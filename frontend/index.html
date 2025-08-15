@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechMaa-AI | Consulting & IT Services</title>
+    <meta name="description" content="TechMaa-AI delivers strategy, technology, and AI-driven transformation services." />
+
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      /* Subtle background dot pattern for a more premium feel */
+      .bg-dots {
+        background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+        background-size: 1.5rem 1.5rem;
+      }
+      /* Custom styles for the Swiper pagination and navigation */
+      .swiper-pagination-bullet-active {
+        background-color: #f59e0b !important; /* Tailwind yellow-500 */
+      }
+      .swiper-button-next, .swiper-button-prev {
+        color: #f59e0b !important; /* Tailwind yellow-500 */
+        transition: transform 0.2s ease-in-out;
+      }
+       .swiper-button-next:hover, .swiper-button-prev:hover {
+        transform: scale(1.1);
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <header id="main-header" class="bg-black/80 text-white shadow-lg sticky top-0 z-50 backdrop-blur-sm transition-colors duration-300">
+      <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold" aria-label="TechMaa-AI Home">
+          <img src="assets/img/logo.svg" alt="TechMaa-AI Logo" class="w-8 h-8" />
+          <span class="hidden sm:inline">TechMaa-AI</span>
+        </a>
+        <ul class="hidden md:flex items-center space-x-6">
+          <li><a href="services.html" class="hover:text-yellow-400 transition">Services</a></li>
+          <li><a href="testimonials.html" class="hover:text-yellow-400 transition">Testimonials</a></li>
+          <li><a href="insights.html" class="hover:text-yellow-400 transition">Insights</a></li>
+          <li><a href="careers.html" class="hover:text-yellow-400 transition">Careers</a></li>
+          <li><a href="contact.html" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 px-4 rounded-lg transition">Contact</a></li>
+        </ul>
+        <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </nav>
+
+      <div id="mobile-menu-overlay" class="md:hidden fixed inset-0 bg-black bg-opacity-75 z-40 hidden"></div>
+      <div id="mobile-menu" class="md:hidden fixed top-0 right-0 w-64 h-full bg-gray-900 text-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <div class="p-6 flex justify-end">
+          <button id="close-mobile-menu" class="text-white focus:outline-none" aria-label="Close mobile menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <ul class="flex flex-col space-y-4 p-6">
+          <li><a href="services.html" class="block py-2 text-lg hover:text-yellow-400 transition">Services</a></li>
+          <li><a href="testimonials.html" class="block py-2 text-lg hover:text-yellow-400 transition">Testimonials</a></li>
+          <li><a href="insights.html" class="block py-2 text-lg hover:text-yellow-400 transition">Insights</a></li>
+          <li><a href="careers.html" class="block py-2 text-lg hover:text-yellow-400 transition">Careers</a></li>
+          <li><a href="contact.html" class="block py-2 text-lg hover:text-yellow-400 transition">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+        <section class="bg-white bg-dots">
+            <div class="container mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left" data-aos="fade-right">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+                        Build what’s next with <span class="text-yellow-500" id="typed-element"></span>
+                    </h1>
+                    <p class="text-lg text-gray-700 mt-6 max-w-xl mx-auto md:mx-0">
+                        We partner with enterprises and startups to deliver measurable outcomes through cloud, data, and AI-led transformation.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="services.html" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">Explore Services</a>
+                        <a href="testimonials.html" class="bg-gray-800 hover:bg-black text-white font-bold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">See Our Work</a>
+                    </div>
+                </div>
+                <div class="flex justify-center" data-aos="fade-left" data-aos-delay="200">
+                    <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="AI and cloud technology illustration" class="w-full max-w-md rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16">
+            <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+                <h2 class="text-xl font-semibold text-gray-600 mb-8">Trusted by teams across industries</h2>
+                <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 text-gray-500">
+                    <div class="flex items-center gap-3"><i class="fas fa-landmark text-2xl"></i><span class="font-medium">FinTech</span></div>
+                    <div class="flex items-center gap-3"><i class="fas fa-graduation-cap text-2xl"></i><span class="font-medium">EdTech</span></div>
+                    <div class="flex items-center gap-3"><i class="fas fa-briefcase-medical text-2xl"></i><span class="font-medium">Healthcare</span></div>
+                    <div class="flex items-center gap-3"><i class="fas fa-shopping-cart text-2xl"></i><span class="font-medium">Retail & CPG</span></div>
+                    <div class="flex items-center gap-3"><i class="fas fa-building-columns text-2xl"></i><span class="font-medium">Public Sector</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24 bg-white bg-dots">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 max-w-3xl mx-auto" data-aos="fade-up">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">End-to-End Digital Transformation</h2>
+                    <p class="text-lg text-gray-700 mt-4">From strategy to execution, we provide the expertise you need to innovate and scale.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-3xl text-yellow-500 mb-4"><i class="fas fa-compass"></i></div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Strategy & Advisory</h3>
+                        <p class="text-gray-600 mb-4">From vision to roadmap—target operating models, AI adoption, and value realization.</p>
+                        <a href="services.html" class="font-semibold text-yellow-600 hover:text-yellow-700 transition">Learn more →</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-3xl text-yellow-500 mb-4"><i class="fas fa-cloud"></i></div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Engineering & Cloud</h3>
+                        <p class="text-gray-600 mb-4">Modernize platforms with microservices, Kubernetes, and serverless on AWS, GCP, and Azure.</p>
+                        <a href="services.html" class="font-semibold text-yellow-600 hover:text-yellow-700 transition">Learn more →</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-3xl text-yellow-500 mb-4"><i class="fas fa-brain"></i></div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Data & GenAI</h3>
+                        <p class="text-gray-600 mb-4">Data platforms, MLOps, and safe Generative AI copilots tailored to your business.</p>
+                        <a href="services.html" class="font-semibold text-yellow-600 hover:text-yellow-700 transition">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24 bg-gray-900 text-white" id="outcomes-section">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl sm:text-4xl font-bold">Outcome-first. Not hype-first.</h2>
+                    <p class="text-lg text-gray-300 mt-4">We measure our success by the tangible business outcomes we deliver—revenue lift, cost savings, and risk reduction.</p>
+                    <a href="testimonials.html" class="mt-6 inline-block bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">Browse Client Stories</a>
+                </div>
+                <ul class="space-y-4 text-lg" data-aos="fade-left" data-aos-delay="200">
+                    <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i><span><span class="font-bold text-2xl" data-count="30">0</span>% average reduction in time-to-market</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i><span>Up to <span class="font-bold text-2xl" data-count="40">0</span>% cloud spend optimization</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i><span><span class="font-bold">Hours to minutes</span> for critical customer workflows</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24 relative">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 max-w-3xl mx-auto" data-aos="fade-up">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">What Our Clients Say</h2>
+                    <p class="text-lg text-gray-700 mt-4">We are proud to partner with innovators and industry leaders.</p>
+                </div>
+                <div class="swiper" data-aos="fade-up" data-aos-delay="200">
+                    <div class="swiper-wrapper pb-16">
+                        <div class="swiper-slide p-2"><div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 h-full flex flex-col"><i class="fas fa-quote-left text-yellow-400 text-3xl mb-4"></i><blockquote class="text-lg italic text-gray-700 mb-6 flex-grow">“TechMaa-AI's expertise in cloud architecture transformed our infrastructure, leading to a 40% reduction in operational costs. They are true partners in innovation.”</blockquote><footer class="mt-auto"><div><p class="font-bold text-gray-900">Priya Sharma</p><p class="text-sm text-gray-600">CTO, Innovate Solutions</p></div></footer></div></div>
+                        <div class="swiper-slide p-2"><div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 h-full flex flex-col"><i class="fas fa-quote-left text-yellow-400 text-3xl mb-4"></i><blockquote class="text-lg italic text-gray-700 mb-6 flex-grow">“The custom AI model they developed has been a game-changer, improving our delivery efficiency by 25%. I cannot recommend them highly enough.”</blockquote><footer class="mt-auto"><div><p class="font-bold text-gray-900">Arjun Singh</p><p class="text-sm text-gray-600">Head of Operations, Global Logistics</p></div></footer></div></div>
+                        <div class="swiper-slide p-2"><div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 h-full flex flex-col"><i class="fas fa-quote-left text-yellow-400 text-3xl mb-4"></i><blockquote class="text-lg italic text-gray-700 mb-6 flex-grow">“Working with TechMaa-AI felt like an extension of our own team. Their collaborative approach helped us launch a solution that significantly reduced downtime.”</blockquote><footer class="mt-auto"><div><p class="font-bold text-gray-900">Rohan Mehta</p><p class="text-sm text-gray-600">VP of Engineering, Manufacturing Inc.</p></div></footer></div></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                 <div class="swiper-button-prev -left-4"></div>
+                <div class="swiper-button-next -right-4"></div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <div class="bg-blue-200/50 border border-yellow-100 rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl font-bold text-gray-900">Ready to start building?</h2>
+                    <p class="text-lg text-gray-700 mt-4 mb-8">Join our newsletter for the latest insights on AI and digital transformation, delivered to your inbox.</p>
+                    <form id="newsletterForm" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                        <input type="email" name="email" placeholder="Your work email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:outline-none transition-all duration-200" />
+                        <button type="submit" class="bg-gray-800 hover:bg-black text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">Subscribe</button>
+                    </form>
+                    <p id="newsletterMsg" class="mt-4 text-sm font-medium"></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-black text-white">
+        <div class="container mx-auto px-6 pt-16 pb-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="col-span-2 md:col-span-1"><h4 class="text-xl font-bold text-white mb-4">TechMaa-AI</h4><p class="text-gray-400">Consulting & IT services to help you ship faster—with confidence.</p></div>
+                <nav><h5 class="font-bold text-gray-200 mb-4">Company</h5><ul class="space-y-2"><li><a href="services.html" class="text-gray-400 hover:text-yellow-400 transition">Services</a></li><li><a href="careers.html" class="text-gray-400 hover:text-yellow-400 transition">Careers</a></li><li><a href="contact.html" class="text-gray-400 hover:text-yellow-400 transition">Contact Us</a></li></ul></nav>
+                <nav><h5 class="font-bold text-gray-200 mb-4">Resources</h5><ul class="space-y-2"><li><a href="insights.html" class="text-gray-400 hover:text-yellow-400 transition">Insights</a></li><li><a href="privacy.html" class="text-gray-400 hover:text-yellow-400 transition">Privacy Policy</a></li><li><a href="terms.html" class="text-gray-400 hover:text-yellow-400 transition">Terms of Service</a></li></ul></nav>
+                <div><h5 class="font-bold text-gray-200 mb-4">Get in touch</h5><a href="mailto:hello@techmaa-ai.com" class="text-gray-400 hover:text-yellow-400 transition">hello@techmaa-ai.com</a></div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500"><small>&copy; <span id="year"></span> TechMaa-AI. All rights reserved.</small></div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        AOS.init({ duration: 800, once: true, offset: 50 });
+        new Typed('#typed-element', { strings: ['AI', 'Data', 'Cloud'], typeSpeed: 80, backSpeed: 50, backDelay: 2000, loop: true, smartBackspace: true });
+        new Swiper('.swiper', {
+            loop: true,
+            autoplay: { delay: 5000, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            slidesPerView: 1,
+            spaceBetween: 20,
+            breakpoints: { 768: { slidesPerView: 2 } }
+        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('[data-count]');
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-count');
+                        let count = 0;
+                        const speed = 200;
+                        const increment = target / speed;
+                        const updateCount = () => {
+                            if (count < target) {
+                                count += increment;
+                                counter.innerText = Math.ceil(count);
+                                setTimeout(updateCount, 1);
+                            } else {
+                                counter.innerText = target;
+                            }
+                        };
+                        updateCount();
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        const outcomesSection = document.getElementById('outcomes-section');
+        if(outcomesSection) { observer.observe(outcomesSection); }
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('bg-black/95', window.scrollY > 10);
+            header.classList.toggle('bg-black/80', window.scrollY <= 10);
+        });
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const closeMobileMenuButton = document.getElementById("close-mobile-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileMenuOverlay = document.getElementById("mobile-menu-overlay");
+        const toggleMobileMenu = () => {
+          const isOpen = mobileMenu.classList.contains("translate-x-full");
+          mobileMenu.classList.toggle("translate-x-full", !isOpen);
+          mobileMenuOverlay.classList.toggle("hidden", !isOpen);
+          document.body.classList.toggle("overflow-hidden", isOpen);
+        };
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        if (closeMobileMenuButton) closeMobileMenuButton.addEventListener("click", toggleMobileMenu);
+        mobileMenuOverlay.addEventListener("click", toggleMobileMenu);
+        document.getElementById("year").textContent = new Date().getFullYear();
+        const newsletterForm = document.getElementById("newsletterForm");
+        const newsletterMsg = document.getElementById("newsletterMsg");
+        if (newsletterForm) {
+            newsletterForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                newsletterMsg.textContent = "Thank you for subscribing!";
+                newsletterMsg.classList.add('text-green-600');
+                newsletterForm.reset();
+                setTimeout(() => {
+                    newsletterMsg.textContent = "";
+                    newsletterMsg.classList.remove('text-green-600');
+                }, 4000);
+            });
+        }
+      });
+    </script>
+</body>
+</html>

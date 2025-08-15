@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | TechMaa-AI</title>
+
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      /* Custom styles go here. Tailwind utility classes are preferred where possible. */
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .social-icon {
+        transition: transform 0.3s ease-in-out,
+          background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      }
+      .social-icon:hover {
+        transform: scale(1.1);
+        background-color: #fcd34d;
+        color: #1f2937;
+      } /* Tailwind: bg-yellow-300 text-gray-800 */
+
+      /* Custom styles for form focus/error states if not fully covered by Tailwind's default or custom config */
+      input.form-field:focus,
+      textarea.form-field:focus {
+        outline: none;
+        border-color: #fcd34d; /* Tailwind: border-yellow-300 */
+        box-shadow: 0 0 0 3px rgba(252, 211, 77, 0.5); /* Tailwind: ring-2 ring-yellow-300/50 */
+      }
+      input.form-field.error,
+      textarea.form-field.error {
+        border-color: #ef4444; /* Tailwind: border-red-500 */
+      }
+      .error-message {
+        color: #ef4444; /* Tailwind: text-red-500 */
+        font-size: 0.875rem; /* Tailwind: text-sm */
+        margin-top: 0.25rem; /* Tailwind: mt-1 */
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <header class="bg-black text-white shadow-lg sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a
+          href="index.html"
+          class="flex items-center space-x-2 text-2xl font-bold"
+          aria-label="TechMaa-AI Home"
+        >
+          <img
+            src="assets/img/logo.svg"
+            alt="TechMaa-AI Logo"
+            class="w-8 h-8"
+          />
+          <span class="hidden sm:inline">TechMaa-AI</span>
+        </a>
+        <ul class="hidden md:flex items-center space-x-6">
+          <li>
+            <a href="services.html" class="hover:text-yellow-400 transition"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a href="testimonials.html" class="hover:text-yellow-400 transition"
+              >Testimonials</a
+            >
+          </li>
+          <li>
+            <a href="insights.html" class="hover:text-yellow-400 transition"
+              >Insights</a
+            >
+          </li>
+          <li>
+            <a href="careers.html" class="hover:text-yellow-400 transition"
+              >Careers</a
+            >
+          </li>
+          <li>
+            <a href="contact.html" class="text-yellow-400 font-semibold"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <button
+          id="mobile-menu-button"
+          class="md:hidden focus:outline-none"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </nav>
+
+      <div
+        id="mobile-menu-overlay"
+        class="md:hidden fixed inset-0 bg-black bg-opacity-75 z-40 hidden"
+      ></div>
+      <div
+        id="mobile-menu"
+        class="md:hidden fixed top-0 right-0 w-64 h-full bg-gray-900 text-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50"
+      >
+        <div class="p-6 flex justify-end">
+          <button
+            id="close-mobile-menu"
+            class="text-white focus:outline-none"
+            aria-label="Close mobile menu"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <ul class="flex flex-col space-y-4 p-6">
+          <li>
+            <a
+              href="services.html"
+              class="block py-2 text-lg hover:text-yellow-400 transition"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              href="industries.html"
+              class="block py-2 text-lg hover:text-yellow-400 transition"
+              >Industries</a
+            >
+          </li>
+          <li>
+            <a
+              href="case-studies.html"
+              class="block py-2 text-lg hover:text-yellow-400 transition"
+              >Case Studies</a
+            >
+          </li>
+          <li>
+            <a
+              href="insights.html"
+              class="block py-2 text-lg hover:text-yellow-400 transition"
+              >Insights</a
+            >
+          </li>
+          <li>
+            <a
+              href="careers.html"
+              class="block py-2 text-lg hover:text-yellow-400 transition"
+              >Careers</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="block py-2 text-lg text-yellow-400 font-semibold"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="container mx-auto px-6 py-12 text-center">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6">
+          Get in Touch With TechMaa-AI
+        </h1>
+        <p
+          class="text-lg text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed"
+        >
+          We're here to help you navigate your digital transformation journey.
+          Whether you have inquiries about our services, need technical support,
+          or want to discuss a potential partnership, feel free to reach out.
+        </p>
+
+        <section
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16"
+        >
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center justify-center border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+          >
+            <i class="fas fa-envelope text-5xl text-blue-600 mb-6"></i>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-3">Email Us</h3>
+            <p class="text-gray-600 mb-4 text-center">
+              General inquiries & support. We aim to respond within 24 business
+              hours.
+            </p>
+            <a
+              href="mailto:info@techmaa-ai.com"
+              class="text-blue-600 hover:text-blue-800 font-medium text-lg flex items-center space-x-2"
+            >
+              <span>info@techmaa-ai.com</span>
+              <i class="fas fa-arrow-right text-sm"></i>
+            </a>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center justify-center border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+          >
+            <i class="fas fa-phone-alt text-5xl text-green-600 mb-6"></i>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-3">Call Us</h3>
+            <p class="text-gray-600 mb-4 text-center">
+              Speak directly to our experts for immediate assistance or project
+              discussions.
+            </p>
+            <a
+              href="tel:+919876543210"
+              class="text-green-600 hover:text-green-800 font-medium text-lg flex items-center space-x-2"
+            >
+              <span>+91 98765 43210</span>
+              <i class="fas fa-arrow-right text-sm"></i>
+            </a>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center justify-center border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+          >
+            <i class="fas fa-map-marker-alt text-5xl text-purple-600 mb-6"></i>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-3">Visit Us</h3>
+            <p class="text-gray-600 mb-4 text-center">
+              Schedule a meeting at our headquarters.
+            </p>
+            <a
+              href="#address-section"
+              class="text-purple-600 hover:text-purple-800 font-medium text-lg flex items-center space-x-2"
+            >
+              <span>Our Location</span>
+              <i class="fas fa-arrow-right text-sm"></i>
+            </a>
+          </div>
+        </section>
+
+        <section
+          class="max-w-3xl mx-auto bg-white p-8 sm:p-10 rounded-xl shadow-lg border border-gray-100 mb-16"
+        >
+          <h2 id="messageUs" class="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Send Us a Message
+          </h2>
+          <form id="contactForm" class="space-y-6" novalidate enctype="multipart/form-data">
+            <div>
+              <label
+                for="name"
+                class="block text-left text-gray-700 font-medium mb-2"
+                >Full Name <span class="text-red-500">*</span></label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="form-field w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-400 focus:border-yellow-400 transition-all duration-200"
+                placeholder="John Doe"
+                aria-required="true"
+              />
+              <p
+                id="name-error"
+                class="error-message hidden"
+                aria-live="polite"
+              ></p>
+            </div>
+            <div>
+              <label
+                for="email"
+                class="block text-left text-gray-700 font-medium mb-2"
+                >Work Email <span class="text-red-500">*</span></label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="form-field w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-400 focus:border-yellow-400 transition-all duration-200"
+                placeholder="your.email@example.com"
+                aria-required="true"
+              />
+              <p
+                id="email-error"
+                class="error-message hidden"
+                aria-live="polite"
+              ></p>
+            </div>
+            <div>
+              <label
+                for="company"
+                class="block text-left text-gray-700 font-medium mb-2"
+                >Company (Optional)</label
+              >
+              <input
+                type="text"
+                id="company"
+                name="company"
+                class="form-field w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-400 focus:border-yellow-400 transition-all duration-200"
+                placeholder="Acme Corp"
+              />
+            </div>
+            
+            <div>
+                <label for="resume" class="block text-left text-gray-700 font-medium mb-2">Attach Resume (PDF, max 5MB)</label>
+                <input type="file" id="resume" name="resume" class="form-field block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-yellow-100 file:text-yellow-700 hover:file:bg-yellow-200 cursor-pointer transition-colors duration-200" accept=".pdf">
+                <p id="resume-error" class="error-message hidden" aria-live="polite"></p>
+            </div>
+
+            <div>
+              <label
+                for="message"
+                class="block text-left text-gray-700 font-medium mb-2"
+                >Message <span class="text-red-500">*</span></label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+                class="form-field w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-400 focus:border-yellow-400 transition-all duration-200 resize-y"
+                placeholder="Tell us about your project or inquiry..."
+                aria-required="true"
+              ></textarea>
+              <p
+                id="message-error"
+                class="error-message hidden"
+                aria-live="polite"
+              ></p>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2"
+            >
+              Send Message <i class="fas fa-paper-plane ml-2"></i>
+            </button>
+            <p
+              class="form-note text-center text-sm text-gray-600 mt-4"
+              id="contactMsg"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
+        </section>
+
+        <section class="mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-8">Connect With Us</h2>
+          <div class="flex justify-center space-x-6">
+            <a
+              href="https://linkedin.com/company/techmaa-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon bg-gray-100 text-gray-700 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-md hover:shadow-lg"
+              aria-label="Connect on LinkedIn"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://github.com/techmaa-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon bg-gray-100 text-gray-700 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-md hover:shadow-lg"
+              aria-label="Follow on GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://instagram.com/techmaa_ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon bg-gray-100 text-gray-700 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-md hover:shadow-lg"
+              aria-label="Follow on Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://youtube.com/techmaa-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon bg-gray-100 text-gray-700 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-md hover:shadow-lg"
+              aria-label="Subscribe on YouTube"
+            >
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </section>
+
+        <section id="address-section" class="mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-8">Our Location</h2>
+          <div
+            class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg border border-gray-100"
+          >
+            <p class="text-gray-700 mb-4 leading-relaxed">
+              TechMaa-AI Headquarters<br />
+              456 Innovation Avenue, Tech City<br />
+              Bengaluru, Karnataka, India - 560001
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white mt-16 py-8">
+      <div class="container mx-auto px-6 text-center text-gray-400">
+        <p>&copy; <span id="year"></span> TechMaa-AI. All rights reserved.</p>
+        <p class="text-sm mt-2">
+          Empowering industries with AI-driven innovation.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Set current year in footer
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const closeMobileMenuButton =
+          document.getElementById("close-mobile-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileMenuOverlay = document.getElementById(
+          "mobile-menu-overlay"
+        );
+
+        const toggleMobileMenu = () => {
+          const isOpen = mobileMenu.classList.contains("translate-x-full");
+          if (isOpen) {
+            mobileMenu.classList.remove("translate-x-full");
+            mobileMenuOverlay.classList.remove("hidden");
+            mobileMenuButton.setAttribute("aria-expanded", "true");
+            document.body.classList.add("overflow-hidden"); // Prevent background scroll
+          } else {
+            mobileMenu.classList.add("translate-x-full");
+            mobileMenuOverlay.classList.add("hidden");
+            mobileMenuButton.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("overflow-hidden"); // Restore background scroll
+          }
+        };
+
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenuButton.addEventListener("click", toggleMobileMenu);
+        mobileMenuOverlay.addEventListener("click", toggleMobileMenu); // Close when clicking overlay
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            if (!mobileMenu.classList.contains("translate-x-full")) {
+              toggleMobileMenu();
+            }
+          });
+        });
+
+        // Contact Form Submission (Client-side validation and simulated API call)
+        const contactForm = document.getElementById("contactForm");
+        const contactMsg = document.getElementById("contactMsg");
+
+        if (contactForm && contactMsg) {
+          contactForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            // Clear previous messages and errors
+            contactMsg.textContent = "";
+            contactMsg.classList.remove("text-green-600", "text-red-500");
+            document.querySelectorAll(".error-message").forEach((el) => {
+              el.textContent = "";
+              el.classList.add("hidden");
+            });
+            document
+              .querySelectorAll(".form-field")
+              .forEach((el) => el.classList.remove("error"));
+
+            let isValid = true;
+            const formData = new FormData(contactForm);
+            const formValues = {};
+            
+            for (let [name, value] of formData.entries()) {
+                // We handle the file input separately
+                if (typeof value !== 'object') { 
+                    formValues[name] = value.trim();
+                }
+            }
+
+
+            // Basic Client-side Validation
+            // Full Name
+            if (!formValues.name) {
+              displayError("name", "Full Name is required.");
+              isValid = false;
+            }
+
+            // Work Email
+            if (!formValues.email) {
+              displayError("email", "Work Email is required.");
+              isValid = false;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formValues.email)) {
+              displayError("email", "Please enter a valid email address.");
+              isValid = false;
+            }
+
+            // Resume file validation
+            const resumeInput = document.getElementById('resume');
+            const resumeFile = resumeInput.files[0];
+            const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+
+            if (resumeFile) { // If a file is selected
+                if (resumeFile.type !== 'application/pdf') {
+                    displayError('resume', 'Invalid file type. Please upload a PDF.');
+                    isValid = false;
+                }
+                if (resumeFile.size > MAX_FILE_SIZE) {
+                    displayError('resume', 'File is too large. Maximum size is 5MB.');
+                    isValid = false;
+                }
+            }
+
+
+            // Message
+            if (!formValues.message) {
+              displayError("message", "Message is required.");
+              isValid = false;
+            } else if (formValues.message.length < 10) {
+              displayError(
+                "message",
+                "Message must be at least 10 characters long."
+              );
+              isValid = false;
+            }
+
+            if (!isValid) {
+              contactMsg.textContent = "Please fix the errors in the form.";
+              contactMsg.classList.add("text-red-500");
+              return; // Stop submission if validation fails
+            }
+
+            // If valid, proceed with submission simulation
+            contactMsg.textContent = "Sending message...";
+            contactMsg.classList.add("text-gray-500");
+
+            try {
+              // Simulate API call
+              const response = await new Promise((resolve) =>
+                setTimeout(() => {
+                  // Simulate success or failure
+                  const success = Math.random() > 0.1; // 90% chance of success
+                  if (success) {
+                    resolve({
+                      ok: true,
+                      json: () =>
+                        Promise.resolve({
+                          message:
+                            "Message sent successfully! We will get back to you soon.",
+                        }),
+                    });
+                  } else {
+                    resolve({
+                      ok: false,
+                      json: () =>
+                        Promise.resolve({
+                          message:
+                            "Failed to send message. Please try again later.",
+                        }),
+                    });
+                  }
+                }, 1500)
+              ); // Simulate network delay
+
+              const data = await response.json();
+              if (response.ok) {
+                contactMsg.textContent = data.message;
+                contactMsg.classList.remove("text-gray-500");
+                contactMsg.classList.add("text-green-600");
+                contactForm.reset(); // Clear form on success
+              } else {
+                contactMsg.textContent = data.message;
+                contactMsg.classList.remove("text-gray-500");
+                contactMsg.classList.add("text-red-500");
+              }
+            } catch (err) {
+              console.error("Contact form submission error:", err);
+              contactMsg.textContent =
+                "A network error occurred. Please try again.";
+              contactMsg.classList.remove("text-gray-500");
+              contactMsg.classList.add("text-red-500");
+            }
+          });
+
+          // Helper function to display errors
+          function displayError(field, message) {
+            const inputElement = document.getElementById(field);
+            const errorElement = document.getElementById(`${field}-error`);
+            if (inputElement) inputElement.classList.add("error");
+            if (errorElement) {
+              errorElement.textContent = message;
+              errorElement.classList.remove("hidden");
+            }
+          }
+
+          // Real-time validation feedback on input
+          contactForm.querySelectorAll(".form-field").forEach((input) => {
+            input.addEventListener("input", () => {
+              if (input.name === "email") {
+                if (
+                  input.value &&
+                  !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)
+                ) {
+                  displayError("email", "Please enter a valid email address.");
+                } else {
+                  clearError("email");
+                }
+              } else if (input.name === "name" || input.name === "message") {
+                if (input.value) {
+                  clearError(input.name);
+                }
+              } else if (input.name === 'resume') {
+                clearError('resume'); // Clear resume error on new file selection
+              }
+            });
+          });
+
+          // Helper function to clear errors
+          function clearError(field) {
+            const inputElement = document.getElementById(field);
+            const errorElement = document.getElementById(`${field}-error`);
+            if (inputElement) inputElement.classList.remove("error");
+            if (errorElement) {
+              errorElement.textContent = "";
+              errorElement.classList.add("hidden");
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

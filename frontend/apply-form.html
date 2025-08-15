@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply for a Role | TechMaa-AI</title>
+
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      input.form-field:focus,
+      textarea.form-field:focus {
+        outline: none;
+        border-color: #fcd34d; /* Tailwind: border-yellow-300 */
+        box-shadow: 0 0 0 3px rgba(252, 211, 77, 0.5); /* Tailwind: ring-2 ring-yellow-300/50 */
+      }
+      input.form-field.error,
+      textarea.form-field.error {
+        border-color: #ef4444; /* Tailwind: border-red-500 */
+      }
+      .error-message {
+        color: #ef4444; /* Tailwind: text-red-500 */
+        font-size: 0.875rem; /* Tailwind: text-sm */
+        margin-top: 0.25rem; /* Tailwind: mt-1 */
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <header class="bg-black text-white shadow-lg sticky top-0 z-50">
+      <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold" aria-label="TechMaa-AI Home">
+          <img src="assets/img/logo.svg" alt="TechMaa-AI Logo" class="w-8 h-8" />
+          <span class="hidden sm:inline">TechMaa-AI</span>
+        </a>
+        <ul class="hidden md:flex items-center space-x-6">
+          <li><a href="services.html" class="hover:text-yellow-400 transition">Services</a></li>
+          <li><a href="testimonials.html" class="hover:text-yellow-400 transition">Testimonials</a></li>
+          <li><a href="insights.html" class="hover:text-yellow-400 transition">Insights</a></li>
+          <li><a href="careers.html" class="hover:text-yellow-400 transition">Careers</a></li>
+          <li><a href="contact.html" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 px-4 rounded-lg transition">Contact</a></li>
+        </ul>
+        <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </nav>
+
+      <div id="mobile-menu-overlay" class="md:hidden fixed inset-0 bg-black bg-opacity-75 z-40 hidden"></div>
+      <div id="mobile-menu" class="md:hidden fixed top-0 right-0 w-64 h-full bg-gray-900 text-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <div class="p-6 flex justify-end">
+          <button id="close-mobile-menu" class="text-white focus:outline-none" aria-label="Close mobile menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <ul class="flex flex-col space-y-4 p-6">
+          <li><a href="services.html" class="block py-2 text-lg hover:text-yellow-400 transition">Services</a></li>
+          <li><a href="testimonials.html" class="block py-2 text-lg hover:text-yellow-400 transition">Testimonials</a></li>
+          <li><a href="insights.html" class="block py-2 text-lg hover:text-yellow-400 transition">Insights</a></li>
+          <li><a href="careers.html" class="block py-2 text-lg hover:text-yellow-400 transition">Careers</a></li>
+          <li><a href="contact.html" class="block py-2 text-lg hover:text-yellow-400 transition">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="py-16 md:py-24">
+        <section class="max-w-3xl mx-auto bg-white p-8 sm:p-10 rounded-xl shadow-lg border border-gray-100">
+            <div id="form-container">
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Apply for <span id="jobTitle" class="text-yellow-500">Open Position</span></h1>
+                    <p class="text-lg text-gray-600 mt-4">Fill in your details below to apply. Fields marked with <span class="text-red-500">*</span> are required.</p>
+                </div>
+
+                <form id="applyForm" class="space-y-6" novalidate>
+                    <input type="hidden" id="jobRole" name="jobRole" />
+                    <div>
+                        <label for="fullName" class="block text-gray-700 font-medium mb-2">Full Name <span class="text-red-500">*</span></label>
+                        <input type="text" id="fullName" name="fullName" required class="form-field w-full p-3 border border-gray-300 rounded-lg" />
+                        <p id="fullName-error" class="error-message hidden"></p>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Email Address <span class="text-red-500">*</span></label>
+                        <input type="email" id="email" name="email" required class="form-field w-full p-3 border border-gray-300 rounded-lg" />
+                        <p id="email-error" class="error-message hidden"></p>
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" class="form-field w-full p-3 border border-gray-300 rounded-lg" />
+                    </div>
+                    <div>
+                        <label for="coverLetter" class="block text-gray-700 font-medium mb-2">Cover Letter <span class="text-red-500">*</span></label>
+                        <textarea id="coverLetter" name="coverLetter" rows="6" required class="form-field w-full p-3 border border-gray-300 rounded-lg resize-y"></textarea>
+                        <p id="coverLetter-error" class="error-message hidden"></p>
+                    </div>
+                    <div>
+                        <label for="resume" class="block text-gray-700 font-medium mb-2">Upload Resume <span class="text-red-500">*</span></label>
+                        <input type="file" id="resume" name="resume" required accept=".pdf,.doc,.docx" class="form-field block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-yellow-100 file:text-yellow-700 hover:file:bg-yellow-200 cursor-pointer" />
+                        <p id="resume-error" class="error-message hidden"></p>
+                    </div>
+                    <div>
+                        <button type="submit" id="submitButton" class="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                            Submit Application
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="applyMsg" role="status" class="text-center text-sm font-medium"></div>
+
+        </section>
+    </main>
+
+    <footer class="bg-black text-white py-8 mt-16">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; <span id="year"></span> TechMaa-AI. All rights reserved.</p>
+            <p class="text-sm mt-2">Empowering industries with AI-driven innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+            const mobileMenuButton = document.getElementById("mobile-menu-button"),
+                  closeMobileMenuButton = document.getElementById("close-mobile-menu"),
+                  mobileMenu = document.getElementById("mobile-menu"),
+                  mobileMenuOverlay = document.getElementById("mobile-menu-overlay");
+            const toggleMobileMenu = () => {
+                const isOpen = mobileMenu.classList.contains("translate-x-full");
+                mobileMenu.classList.toggle("translate-x-full", !isOpen);
+                mobileMenuOverlay.classList.toggle("hidden", !isOpen);
+                document.body.classList.toggle("overflow-hidden", isOpen);
+            };
+            mobileMenuButton.addEventListener("click", toggleMobileMenu);
+            closeMobileMenuButton.addEventListener("click", toggleMobileMenu);
+            mobileMenuOverlay.addEventListener("click", toggleMobileMenu);
+
+            const applyForm = document.getElementById('applyForm');
+            if (applyForm) {
+                const params = new URLSearchParams(window.location.search);
+                const role = params.get('role');
+                const jobTitleElement = document.getElementById('jobTitle');
+                if (role) {
+                    const decodedRole = decodeURIComponent(role.replace(/\+/g, ' '));
+                    jobTitleElement.textContent = decodedRole;
+                    document.getElementById('jobRole').value = decodedRole;
+                } else {
+                    jobTitleElement.textContent = 'Open Position';
+                    document.getElementById('jobRole').value = 'Open Position';
+                }
+
+                const msgElement = document.getElementById('applyMsg');
+                const submitButton = document.getElementById('submitButton');
+                const formContainer = document.getElementById('form-container');
+
+                applyForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    let isValid = true;
+                    clearAllErrors();
+                    // --- (Your existing validation logic goes here...) ---
+                    const fullName=document.getElementById("fullName");if(!fullName.value.trim()){displayError("fullName","Full Name is required.");isValid=false}const email=document.getElementById("email");if(!email.value.trim()){displayError("email","Email Address is required.");isValid=false}else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){displayError("email","Please enter a valid email address.");isValid=false}const coverLetter=document.getElementById("coverLetter");if(!coverLetter.value.trim()){displayError("coverLetter","Cover Letter is required.");isValid=false}const resume=document.getElementById("resume");if(resume.files.length===0){displayError("resume","Please upload your resume.");isValid=false}else{const file=resume.files[0];const allowedTypes=["application/pdf","application/msword","application/vnd.openxmlformats-officedocument.wordprocessingml.document"];if(!allowedTypes.includes(file.type)){displayError("resume","Invalid file type. Please upload PDF or DOC/DOCX.");isValid=false}if(file.size>5*1024*1024){displayError("resume","File size exceeds 5MB limit.");isValid=false}}
+                    if (!isValid) return;
+
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = `<i class="fas fa-spinner fa-spin mr-2"></i> Submitting...`;
+
+                    try {
+                        // --- SIMULATED API SUBMISSION ---
+                        await new Promise(resolve => setTimeout(resolve, 1500));
+                        const mockResponse = {
+                            ok: true,
+                            json: () => Promise.resolve({
+                                message: "Application submitted successfully!",
+                                applicationId: `TMAI-${Math.random().toString(16).substr(2, 4).toUpperCase()}-${Math.random().toString(16).substr(2, 4).toUpperCase()}`
+                            })
+                        };
+                        const data = await mockResponse.json();
+                        if (!mockResponse.ok) throw new Error(data.message);
+
+                        // --- NEW SUCCESS MESSAGE ---
+                        formContainer.innerHTML = ''; // Hide the form by clearing its container
+                        msgElement.innerHTML = `
+                            <div class="bg-green-50 text-green-800 p-8 rounded-lg text-center border border-green-200">
+                                <h3 class="font-bold text-2xl">Thank You!</h3>
+                                <p class="mt-2">${data.message}</p>
+                                <div class="mt-6">
+                                    <p class="text-sm">Your Application ID is:</p>
+                                    <p class="text-xl font-mono bg-green-100 py-2 px-4 rounded-md inline-block mt-1">${data.applicationId}</p>
+                                    <p class="mt-4 text-sm text-gray-600">Please save this ID to check your application status.</p>
+                                </div>
+                                <a href="status.html" class="inline-block mt-6 bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg transition">Check Status Now</a>
+                            </div>
+                        `;
+                    } catch (error) {
+                        msgElement.textContent = error.message || 'Error submitting application. Please try again.';
+                        msgElement.className = 'text-center text-sm font-medium text-red-500 mt-4';
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Submit Application';
+                    }
+                });
+            }
+
+            function displayError(field, message) {
+                const errorElement = document.getElementById(`${field}-error`);
+                const inputElement = document.getElementById(field);
+                if(errorElement) { errorElement.textContent=message; errorElement.classList.remove('hidden'); }
+                if(inputElement) { inputElement.classList.add('error'); }
+            }
+
+            function clearAllErrors() {
+                document.querySelectorAll('.error-message').forEach(el => { el.classList.add('hidden'); el.textContent=''; });
+                document.querySelectorAll('.form-field.error').forEach(el => el.classList.remove('error'));
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insights | TechMaa-AI</title>
+
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <header class="bg-black text-white shadow-lg sticky top-0 z-50">
+      <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold" aria-label="TechMaa-AI Home">
+          <img src="assets/img/logo.svg" alt="TechMaa-AI Logo" class="w-8 h-8" />
+          <span class="hidden sm:inline">TechMaa-AI</span>
+        </a>
+        <ul class="hidden md:flex items-center space-x-6">
+          <li><a href="services.html" class="hover:text-yellow-400 transition">Services</a></li>
+          <li><a href="testimonials.html" class="hover:text-yellow-400 transition">Testimonials</a></li>
+          <li><a href="insights.html" class="text-yellow-400 font-semibold">Insights</a></li>
+          <li><a href="careers.html" class="hover:text-yellow-400 transition">Careers</a></li>
+          <li><a href="contact.html" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 px-4 rounded-lg transition">Contact</a></li>
+        </ul>
+        <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </nav>
+
+      <div id="mobile-menu-overlay" class="md:hidden fixed inset-0 bg-black bg-opacity-75 z-40 hidden"></div>
+      <div id="mobile-menu" class="md:hidden fixed top-0 right-0 w-64 h-full bg-gray-900 text-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <div class="p-6 flex justify-end">
+          <button id="close-mobile-menu" class="text-white focus:outline-none" aria-label="Close mobile menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <ul class="flex flex-col space-y-4 p-6">
+          <li><a href="services.html" class="block py-2 text-lg hover:text-yellow-400 transition">Services</a></li>
+          <li><a href="testimonials.html" class="block py-2 text-lg hover:text-yellow-400 transition">Testimonials</a></li>
+          <li><a href="insights.html" class="block py-2 text-lg text-yellow-400 font-semibold">Insights</a></li>
+          <li><a href="careers.html" class="block py-2 text-lg hover:text-yellow-400 transition">Careers</a></li>
+          <li><a href="contact.html" class="block py-2 text-lg hover:text-yellow-400 transition">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+        <section class="bg-white">
+            <div class="container mx-auto px-6 py-16 text-center">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900">TechMaa-AI Insights</h1>
+                <p class="text-lg text-gray-700 mt-4 max-w-3xl mx-auto">
+                    Explore our latest articles, research, and perspectives on AI, data, and digital transformation.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24">
+            <div id="posts" class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <a href="#" class="block">
+                        <img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=1974&auto=format&fit=crop" alt="Abstract AI visualization" class="w-full h-48 object-cover">
+                    </a>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <p class="text-sm text-yellow-600 font-semibold mb-2">ARTIFICIAL INTELLIGENCE</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">
+                            <a href="#" class="hover:text-yellow-500 transition-colors">The Future of Generative AI in Enterprise</a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 flex-grow">
+                            Discover how generative AI is moving beyond chatbots to revolutionize core business functions, from software development to marketing.
+                        </p>
+                        <div class="mt-auto flex items-center text-sm text-gray-500">
+                            <span>By Jane Doe on August 14, 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <a href="#" class="block">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Data analytics dashboard" class="w-full h-48 object-cover">
+                    </a>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <p class="text-sm text-blue-600 font-semibold mb-2">DATA & ANALYTICS</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">
+                            <a href="#" class="hover:text-yellow-500 transition-colors">5 Strategies for Building a Data-Driven Culture</a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 flex-grow">
+                            A data-driven culture is essential for success. Here are five practical strategies to empower your teams with data literacy and tools.
+                        </p>
+                        <div class="mt-auto flex items-center text-sm text-gray-500">
+                            <span>By John Smith on August 10, 2025</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <a href="#" class="block">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop" alt="Cloud computing infrastructure" class="w-full h-48 object-cover">
+                    </a>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <p class="text-sm text-green-600 font-semibold mb-2">CLOUD TRANSFORMATION</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">
+                            <a href="#" class="hover:text-yellow-500 transition-colors">Navigating Multi-Cloud Complexity with FinOps</a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 flex-grow">
+                            As organizations adopt multi-cloud strategies, managing costs becomes critical. Learn how a FinOps approach can bring financial accountability.
+                        </p>
+                        <div class="mt-auto flex items-center text-sm text-gray-500">
+                            <span>By Emily White on August 5, 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; <span id="year"></span> TechMaa-AI. All rights reserved.</p>
+            <p class="text-sm mt-2">Empowering industries with AI-driven innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Set current year in footer
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Mobile menu toggle logic
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const closeMobileMenuButton =
+          document.getElementById("close-mobile-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileMenuOverlay = document.getElementById(
+          "mobile-menu-overlay"
+        );
+
+        const toggleMobileMenu = () => {
+          const isOpen = mobileMenu.classList.contains("translate-x-full");
+          if (isOpen) {
+            mobileMenu.classList.remove("translate-x-full");
+            mobileMenuOverlay.classList.remove("hidden");
+            document.body.classList.add("overflow-hidden"); 
+          } else {
+            mobileMenu.classList.add("translate-x-full");
+            mobileMenuOverlay.classList.add("hidden");
+            document.body.classList.remove("overflow-hidden");
+          }
+        };
+
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenuButton.addEventListener("click", toggleMobileMenu);
+        mobileMenuOverlay.addEventListener("click", toggleMobileMenu);
+      });
+    </script>
+</body>
+</html>
